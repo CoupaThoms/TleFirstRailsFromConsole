@@ -1,9 +1,22 @@
-# README
+# README Thom's avec Markdown
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### C'est un H3 avec les 3 #
+
+- Bla Bla Bla
+- Bli Bli Bli
+
+### Code example
+
+'''ruby
+def change_tires_method
+    puts "ok it's done"
+end
+'''
+
+'''javascript
+    alert("Js ok");
+'''
 
 * Ruby version
 
