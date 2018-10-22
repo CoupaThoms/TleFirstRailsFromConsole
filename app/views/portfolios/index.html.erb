@@ -6,5 +6,5 @@
   <p><%=itemVar.title %></p>
   <p><%=itemVar.subtitle %></p>
   <p><%=itemVar.body %></p>
-  <%= image_tag itemVar.thumb_image %>
+  <%= image_tag itemVar.thumb_image if !itemVar.thumb_image.nil? %>
 <% end %>
