@@ -1,0 +1,18 @@
+<h1>Show</h1>
+
+Debug:
+<%= @portfolio_item.inspect %>
+<hr>
+<br/>
+
+
+<%# au cas ou je n'ai pas de main image je mets le unless %>
+<%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+
+<p><%= @portfolio_item.title %></p>
+
+<em><%= @portfolio_item.subtitle %></em>
+
+<p><%= @portfolio_item.body %></p>
+
+<p><%= @portfolio_item.created_at %></p>
