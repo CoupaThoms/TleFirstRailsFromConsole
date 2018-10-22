@@ -2,9 +2,24 @@
   Portfolio Items
 </h1>
 
+<a href="portfolios/new">Create new portfolio with <a></a></a><br/>
+
+<%# IS THE SAME AS%>
+
+<%= link_to "Create new  with link_to", new_portfolio_path %>
+
+
+<p>
+  <%= new_portfolio_path %><br/>
+  <%= new_portfolio_url %>
+</p>
+
 <% @portfolio_items.each do |itemVar| %>
+  <hr>
   <p><%=itemVar.title %></p>
   <p><%=itemVar.subtitle %></p>
   <p><%=itemVar.body %></p>
   <%= image_tag itemVar.thumb_image unless itemVar.thumb_image.nil? %>
+  <%= link_to "Edit", edit_portfolio_path(itemVar.id) %>
+  <hr>
 <% end %>
