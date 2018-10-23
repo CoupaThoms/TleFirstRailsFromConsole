@@ -7,10 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+2.times do |topic|
+  Topic.create!(
+           title: "Topic #{topic}"
+  )
+end
+
+Topic.create!(
+         title: "WRC"
+)
+
 10.times do |blog_variable|
   Blog.create!(
           title: "Mon blog seed #{blog_variable}",
-          body: "Content in seeds file"
+          body: "Blog Content in seeds file. Bla Bla Bla",
+          topic_id: Topic.last.id
   )
 end
 
@@ -27,7 +38,7 @@ end
 puts "5 skills created"
 
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
                title: "Portfolio title: #{portfolio_item}",
                subtitle: "My subtitle",
@@ -36,5 +47,13 @@ puts "5 skills created"
                thumb_image: "http://placehold.it/350x200"
   )
 end
+
+Portfolio.create!(
+    title: "Dernier Portfolio WRC",
+    subtitle: "My subtitle :)",
+    body: "Portfolio generated in my seeds file as well",
+    main_image: "http://placehold.it/600x400",
+    thumb_image: "http://placehold.it/350x200"
+)
 
 puts "9 portfolio created"
