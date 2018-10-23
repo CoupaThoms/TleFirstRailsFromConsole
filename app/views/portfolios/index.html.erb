@@ -16,7 +16,7 @@
 
 <% @portfolio_items.each do |itemVar| %>
   <hr>
-  <p><%= link_to itemVar.title, portfolio_path(itemVar.id) %></p> <%# ici on a pas le show devant le portfolio_path car le show on ecrit pas mais par contre pour le edit c'est bien edit_portfolio_path  %>
+  <p><%= link_to itemVar.title, portfolio_show_path(itemVar.id) %></p> <%# ici on a portfolio_show qui est definie par nous dans le routes.rb %>
   <p><%=itemVar.subtitle %></p>
   <p><%=itemVar.body %></p>
   <%= image_tag itemVar.thumb_image unless itemVar.thumb_image.nil? %>
