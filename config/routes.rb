@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   # get 'pages/contact'
   get 'contact', to: 'pages#contact'
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
   #tudo part: ca va dire que la derfault page c'est ca
   root to: 'pages#home'
