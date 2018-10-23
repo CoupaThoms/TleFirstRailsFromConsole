@@ -21,5 +21,6 @@
   <p><%=itemVar.body %></p>
   <%= image_tag itemVar.thumb_image unless itemVar.thumb_image.nil? %>
   <%= link_to "Edit", edit_portfolio_path(itemVar.id) %>
+  <td><%= link_to 'Destroy', portfolio_path(itemVar), method: :delete, data: { confirm: 'Are you sure?' } %></td>  <%#on est pas obligé de mettre .id%>
   <hr>
 <% end %>
