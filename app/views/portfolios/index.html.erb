@@ -1,0 +1,26 @@
+<h1>
+  Portfolio Items
+</h1>
+
+<a href="portfolios/new">Create new portfolio with <a></a></a><br/>
+
+<%# IS THE SAME AS%>
+
+<%= link_to "Create new  with link_to", new_portfolio_path %>
+
+
+<p>
+  <%= new_portfolio_path %><br/>
+  <%= new_portfolio_url %>
+</p>
+
+<% @portfolio_items.each do |itemVar| %>
+  <hr>
+  <p><%= link_to itemVar.title, portfolio_show_path(itemVar.id) %></p> <%# ici on a portfolio_show qui est definie par nous dans le routes.rb %>
+  <p><%=itemVar.subtitle %></p>
+  <p><%=itemVar.body %></p>
+  <%= image_tag itemVar.thumb_image unless itemVar.thumb_image.nil? %>
+  <%= link_to "Edit", edit_portfolio_path(itemVar.id) %>
+  <td><%= link_to 'Destroy', portfolio_path(itemVar), method: :delete, data: { confirm: 'Are you sure?' } %></td>  <%#on est pas obligé de mettre .id%>
+  <hr>
+<% end %>
