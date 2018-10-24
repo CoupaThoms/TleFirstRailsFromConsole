@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_065635) do
+ActiveRecord::Schema.define(version: 2018_10_24_083753) do
+
+  create_table "air_internal_metadata", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "key"
+    t.text "value"
+    t.text "created_at"
+    t.text "updated_at"
+  end
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -60,5 +67,4 @@ ActiveRecord::Schema.define(version: 2018_10_24_065635) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "blogs", "topics"
 end
