@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :portfolios, except: [:show]  #Toutes les ressources sauf le show qu'on fait nous meme
 
   get 'mon-portfolio/:id', to: 'portfolios#show', as: 'portfolio_show' #cet alias portfolio_show est appele depuis la vue dans index de portfolio
