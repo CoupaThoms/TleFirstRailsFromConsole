@@ -4,18 +4,10 @@ class ApplicationController < ActionController::Base
   # #######################################################################
 
 
-  #You can find it in devise_whitelist.rb
+  #You can find it in devise_whitelist.rb IN THE CONCERNS folder
   include DeviseWhitelist
 
-  before_action :set_source
-
-  def set_source
-    session[:getVarInSession] = params[:q] if params[:q]
-
-
-  end
-
-
-
+  #You can find it in set_source.rb
+  include SetSource
 
 end
