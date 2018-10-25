@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
   #You can find it in set_source.rb
   include SetSource
 
+  include CurrentUserConcern
+
+
 end
