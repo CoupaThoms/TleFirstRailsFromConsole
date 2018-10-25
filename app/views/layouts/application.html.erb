@@ -22,5 +22,11 @@
     <% end %>
 
     <%= yield %>
+
+    <% if session[:getVarInSession] %>
+    <br/><br/><br/>
+    <p>Thanks for visiting me from  <%= session[:getVarInSession] %></p>
+    <% end %>
+
   </body>
 </html>
