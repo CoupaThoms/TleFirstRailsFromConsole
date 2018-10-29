@@ -26,13 +26,7 @@
 
 <%= yield %>
 
-<div>
-  <div><%= link_to "home", root_path %></div>
-  <div><%= link_to "About", about_thomas_path %></div>
-  <div><%= link_to "Contact", contact_path %></div>
-  <div><%= link_to "Blog", blogs_path %></div>
-  <div><%= link_to "Portfolio", portfolios_path %></div>
-</div>
+<%= render "shared/nav" %> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
 <% if session[:getVarInSession] %>
   <br/><br/><br/>
