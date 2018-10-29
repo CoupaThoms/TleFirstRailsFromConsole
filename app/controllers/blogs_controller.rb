@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  layout "blog"  #same as layout("blog") TAKE THE CSS FILE
 
   # GET /blogs
   # GET /blogs.json
