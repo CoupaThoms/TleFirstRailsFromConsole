@@ -23,10 +23,7 @@
 
     <%= render "shared/nav", location: 'top'%> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
-    <% if session[:getVarInSession] %>
-      <br/><br/><br/>
-      <p>Thanks for visiting me from  <%= session[:getVarInSession] %></p>
-    <% end %>
+    <%= source_helper("portfolio") %>
 
   </body>
 </html>

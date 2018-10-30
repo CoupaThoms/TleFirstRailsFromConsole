@@ -22,10 +22,7 @@
 
   <%= render "shared/nav", location: 'top' %>
 
-  <% if session[:getVarInSession] %>
-    <br/><br/><br/>
-    <p>Thanks for visiting me from  <%= session[:getVarInSession] %></p>
-  <% end %>
+  <%= source_helper("blog") %>
 
 </body>
 </html>
