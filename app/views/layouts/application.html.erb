@@ -16,14 +16,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "shared/nav", location: 'top' %>
+    <%= render "shared/nav", location: 'top' %> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
-    <% if current_user.is_a?(User) %><%# if it is an "fake" Guest user it is type OpenStruct %>
-      <%= link_to "logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Register", new_user_registration_path%>
-      <%= link_to "Login", new_user_session_path %>
-    <% end %>
+    <%= login_helper %> <%# Celui la est un helper. Pas un partial car on a de la logique dedans donc on a fait un helper %>
 
     <%= yield %>
 
