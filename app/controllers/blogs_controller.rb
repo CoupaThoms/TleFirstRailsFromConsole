@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
 
     #pas dans le tuto mais il me faut un topic pour la BDD donc j'en ai mis un
-    @blog.topic = Topic.last
+    #@blog.topic = Topic.last
 
     respond_to do |format|
       if @blog.save
