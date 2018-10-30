@@ -28,6 +28,9 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
 
+    #pas dans le tuto mais il me faut un topic pour la BDD donc j'en ai mis un
+    @blog.topic = Topic.last
+
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
