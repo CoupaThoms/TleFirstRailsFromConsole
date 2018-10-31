@@ -58,3 +58,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id', '~> 5.2.0'
 
 gem 'devise', '~> 4.5'
+
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 4.1.3'
+
+#my gem from git hub
+#gem 'coupa_snake_view_tool', git: 'https://github.com/CoupaThoms/coupa_snake_view_tool'
+#and here from rubygems.org
+gem 'coupa_snake_view_tool', '~> 0.1.0'

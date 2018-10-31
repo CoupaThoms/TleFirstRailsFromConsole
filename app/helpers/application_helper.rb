@@ -20,7 +20,11 @@ module ApplicationHelper
       greeting = "Thanks for visiting me from  #{session[:getVarInSession]} and you are on the #{layout_name}"
       content_tag(:p, greeting, class: "source-greeting")
     end
-  end
+    end
 
+  def copyright_generator
+    @copyright = CoupaSnakeViewTool::Renderer.copyright 'Thomas Lefèvre', 'All rights reserved'
+    #THIS IS USING MY GEM coupa_snake_view_tool
+  end
 
 end
