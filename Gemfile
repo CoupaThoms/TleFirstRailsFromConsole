@@ -62,3 +62,6 @@ gem 'devise', '~> 4.5'
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.1.3'
+
+gem 'coupa_snake_view_tool', git: 'https://github.com/CoupaThoms/coupa_snake_view_tool'
+
