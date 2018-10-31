@@ -1,4 +1,6 @@
 class PortfoliosController < ApplicationController
+  before_action :set_portfolio_items, only: [:edit, :update, :destroy]
+
   layout 'portfolio'
 
   def index
@@ -24,11 +26,11 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-    @portfolio_items = Portfolio.find(params[:id])
+    #@portfolio_items = Portfolio.find(params[:id])
   end
 
   def update
-    @portfolio_items = Portfolio.find(params[:id])
+    #@portfolio_items = Portfolio.find(params[:id])
 
     respond_to do |format|
       if @portfolio_items.update(portfolio_params)
@@ -40,11 +42,12 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    #This one has no s ! so it's not at the before action
     @portfolio_item = Portfolio.find(params[:id])
   end
 
   def destroy
-    @portfolio_items = Portfolio.find(params[:id])
+    #@portfolio_items = Portfolio.find(params[:id])
 
     @portfolio_items.destroy
 
@@ -60,6 +63,8 @@ class PortfoliosController < ApplicationController
     params.require(:portfolio).permit(:title, :subtitle, :body)
   end
 
-
+  def set_portfolio_items
+    @portfolio_items = Portfolio.find(params[:id])
+  end
 
 end

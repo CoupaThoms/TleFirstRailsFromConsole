@@ -6,6 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    #@blogs = Blog.first_two_blogs
     @page_title = "Portfolio blog page"
   end
 
