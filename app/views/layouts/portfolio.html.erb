@@ -16,12 +16,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
-    <%= login_helper %>
+    <%= login_helper 'nav-link' %>
 
     <%= yield %>
 
-    <%= render "shared/nav", location: 'top'%> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
+    <%= render "shared/application_nav" %> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
     <%= source_helper("portfolio") %>
 

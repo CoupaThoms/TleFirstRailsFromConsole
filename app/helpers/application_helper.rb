@@ -1,14 +1,15 @@
 module ApplicationHelper
 
-  def login_helper
+  #ici on peut voir qu'on met pas les () pour les arguments c'est au choix
+  def login_helper style
 
     if current_user.is_a?(GuestUser) # if it is an "fake" Guest user it is type OpenStruct or the one we created%>
       # si on met pas les () avec le + ruby retourne juste Login car il retourne que le dernier.
-      (link_to "Sign up", new_user_registration_path) +
-          "<br>".html_safe +
-          (link_to "Login", new_user_session_path)
+      (link_to "Sign up", new_user_registration_path, class: style) +
+          " ".html_safe +
+          (link_to "Login", new_user_session_path, class: style)
     else
-      link_to "Logout", destroy_user_session_path, method: :delete
+      link_to "Logout", destroy_user_session_path, method: :delete, class: style
     end
   end
 

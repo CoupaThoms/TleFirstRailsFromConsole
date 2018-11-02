@@ -19,12 +19,9 @@
 
       <%= render "shared/application_nav" %> <%# we can just say shared/application_nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
-      <%= login_helper %> <%# Celui la est un helper. Pas un partial car on a de la logique dedans donc on a fait un helper %>
-
       <%= yield %>
 
-      <br>
-      <%= copyright_generator %>
+      <%= render "shared/application_footer" %>
 
       <%= source_helper("application") %>
 
