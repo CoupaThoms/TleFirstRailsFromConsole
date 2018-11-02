@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,20 +15,19 @@
   </head>
 
   <body>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <%= render "shared/application_nav" %> <%# we can just say shared/application_nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
 
-    <%= render "shared/nav", location: 'top' %> <%# we can just say shared/nav. Il sait que c'est dans view et il sait que c'est _ devant car c'est un partial %>
+      <%= login_helper %> <%# Celui la est un helper. Pas un partial car on a de la logique dedans donc on a fait un helper %>
 
-    <%= login_helper %> <%# Celui la est un helper. Pas un partial car on a de la logique dedans donc on a fait un helper %>
+      <%= yield %>
 
-    <%= yield %>
+      <br>
+      <%= copyright_generator %>
 
-    <br>
-    <%= copyright_generator %>
+      <%= source_helper("application") %>
 
-    <%= source_helper("application") %>
-
+    </div>
   </body>
 </html>
