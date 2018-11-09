@@ -1,22 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
+<h1>Blogs page</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titile</th>
-      <th>Date</th>
-      <th>Body</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <%= render @blogs %> <%# ici il cherche un partial appelé _blog au singulier, et il fait un foreach avec !!! %>
-  </tbody>
-</table>
-
-<br>
+<div class="row mb-2">
+  <%= render @blogs %> <%# ici il cherche un partial appelé _blog au singulier, et il fait un foreach avec !!! %>
+</div>
 
 <%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>

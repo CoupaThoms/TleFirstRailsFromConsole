@@ -13,6 +13,19 @@ module ApplicationHelper
     end
   end
 
+  def login_helper_blogs
+
+    if current_user.is_a?(GuestUser) # if it is an "fake" Guest user it is type OpenStruct or the one we created%>
+      # si on met pas les () avec le + ruby retourne juste Login car il retourne que le dernier.
+      "<div class = 'col-4 pt-1'>".html_safe + (link_to "Sign up", new_user_registration_path, class: "text-muted") +
+          " ".html_safe +
+          (link_to "Login", new_user_session_path, class: "text-muted")
+      + "</div>".html_safe
+    else
+      "<div class = 'col-4 pt-1'>".html_safe + (link_to "Logout", destroy_user_session_path, method: :delete, class: "text-muted") + "</div>".html_safe
+    end
+  end
+
   def sample_helper
     content_tag(:div, "My content", class: "my-class")
   end

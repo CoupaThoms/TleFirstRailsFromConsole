@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title><%= @page_title %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -13,16 +16,25 @@
 
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="container">
 
-  <%= login_helper 'nav-link' %>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <%= render "shared/application_nav" %>
+        <%= login_helper_blogs %>
 
-  <%= yield %>
+      </nav>
+    </div>
 
-  <%= render "shared/application_nav" %>
+    <%= yield %>
 
-  <%= source_helper("blog") %>
+    <%= source_helper("blog") %>
+
+    <div class="row mb-2">
+
+    </div>
+
+  </div><!-- end container -->
 
 </body>
 </html>
