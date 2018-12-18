@@ -5,7 +5,7 @@
     <%# the old was was doing <% @portfolio_items.each do |itemVar| pourcent> %>
 
 
-    <div class="row sortable">
+    <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
 
       <%# c'est important de noter qu ici c'est pas comme blog. On a un partial car portfolio_item est un nom qu'on a donné c'est pas just portfolio. %>
       <%= render partial: 'portfolio_item', collection: @portfolio_items, spacer_template: 'blog_ruler' %>
