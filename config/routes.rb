@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  resources :portfolios, except: [:show]  #Toutes les ressources sauf le show qu'on fait nous meme
+  resources :portfolios, except: [:show] do     #Toutes les ressources sauf le show qu'on fait nous meme
+    put :sort, on: :collection
+  end
+
 
   get 'mon-portfolio/:id', to: 'portfolios#show', as: 'portfolio_show' #cet alias portfolio_show est appele depuis la vue dans index de portfolio
 

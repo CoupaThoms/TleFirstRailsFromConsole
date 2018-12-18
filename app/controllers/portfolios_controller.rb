@@ -10,6 +10,14 @@ class PortfoliosController < ApplicationController
     #@portfolio_items = Portfolio.specific_portfolio_items
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true #dit a rails qu'on a pas besoin d appeler une vue. On a just update la databaase et on a fini
+  end
+
   def new
     @portfolio_items = Portfolio.new
   end
