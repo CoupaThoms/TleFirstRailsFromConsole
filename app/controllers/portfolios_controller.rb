@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   layout 'portfolio'
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position    #.order("position ASC")
     #@portfolio_items = Portfolio.wrc
     #@portfolio_items = Portfolio.specific_portfolio_items
   end
