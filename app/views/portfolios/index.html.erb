@@ -2,15 +2,14 @@
   <div class="container">
 
     <%= link_to "Create new  with link_to", new_portfolio_path if logged_in?(:site_admin) %>
-
     <%# the old was was doing <% @portfolio_items.each do |itemVar| pourcent> %>
 
-    <div class="row">
 
+    <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
 
-<%# c'est important de noter qu ici c'est pas comme blog. On a un partial car portfolio_item est un nom qu'on a donné c'est pas just portfolio. %>
-<%= render partial: 'portfolio_item', collection: @portfolio_items, spacer_template: 'blog_ruler' %>
-<%# le spacer_template va mettre un separateur entre chaque portfolio. Il ne le met pas pour le premier et dernier. IL FAUT mettre partial pour qu il marche aussi %>
+      <%# c'est important de noter qu ici c'est pas comme blog. On a un partial car portfolio_item est un nom qu'on a donné c'est pas just portfolio. %>
+      <%= render partial: 'portfolio_item', collection: @portfolio_items, spacer_template: 'blog_ruler' %>
+      <%# le spacer_template va mettre un separateur entre chaque portfolio. Il ne le met pas pour le premier et dernier. IL FAUT mettre partial pour qu il marche aussi %>
 
     </div>
   </div>

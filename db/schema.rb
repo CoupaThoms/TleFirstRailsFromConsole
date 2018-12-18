@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_02_084715) do
+ActiveRecord::Schema.define(version: 2018_12_17_133356) do
 
   create_table "air_internal_metadata", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "key"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_11_02_084715) do
     t.text "thumb_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
   end
 
   create_table "skills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

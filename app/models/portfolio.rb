@@ -9,8 +9,11 @@ class Portfolio < ApplicationRecord
     where(title: 'Dernier Portfolio WRC')
   end
 
-  scope :specific_portfolio_items, -> { where(title: 'Portfolio title: 7') }
+  def self.by_position
+    order("position ASC")
+  end
 
+  scope :specific_portfolio_items, -> { where(title: 'Portfolio title: 7') }
 
   after_initialize :set_defaults
 
