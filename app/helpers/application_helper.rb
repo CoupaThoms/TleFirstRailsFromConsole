@@ -42,4 +42,19 @@ module ApplicationHelper
     #THIS IS USING MY GEM coupa_snake_view_tool
   end
 
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      alert_generator alert
+    end
+  end
+
+  def alert_generator msg
+    js add_gritter(msg, title: "Thomas application helper", sticky: false)
+  end
+
+
+
+
 end

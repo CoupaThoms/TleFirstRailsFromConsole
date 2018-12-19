@@ -2,7 +2,7 @@
   <% if blog.errors.any? %>
 
     <%= blog.errors.full_messages.each do | err | %>
-      <%= js add_gritter(err, title: "Thomas Lefèvre Blog", sticky: false) %>
+      <%= alert_generator err %>
     <% end %>
 
     <div id="error_explanation">
