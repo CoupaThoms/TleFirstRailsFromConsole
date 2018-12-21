@@ -22,7 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
-  #tudo part: ca va dire que la derfault page c'est ca
+  #Pour la partie commentaires des blogs
+  mount ActionCable.server => '/cable'
+
+  #ca va dire que la default page c'est ca
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
