@@ -90,4 +90,4 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 #Pour les notifications dans l application
 gem 'gritter', '~> 1.2'
 
-
+gem 'twitter', '~> 6.2'
