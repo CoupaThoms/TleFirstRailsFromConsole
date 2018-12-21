@@ -29,5 +29,12 @@ module TleFirstRailsFromConsole
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+
+    #TLE:
+
+    #ca va load les modules de lib quand tu start
+    config.eager_load_paths << "#{Rails.root}/lib"
+
   end
 end

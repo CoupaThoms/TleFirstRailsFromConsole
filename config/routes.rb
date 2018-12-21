@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :portfolios, except: [:show] do     #Toutes les ressources sauf le show qu'on fait nous meme
     put :sort, on: :collection
@@ -21,7 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
-  #tudo part: ca va dire que la derfault page c'est ca
+  #Pour la partie commentaires des blogs
+  mount ActionCable.server => '/cable'
+
+  #ca va dire que la default page c'est ca
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

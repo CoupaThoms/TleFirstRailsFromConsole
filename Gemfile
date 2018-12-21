@@ -90,4 +90,8 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 #Pour les notifications dans l application
 gem 'gritter', '~> 1.2'
 
+gem 'twitter', '~> 6.2'
+
+#Pour que les commentaires apparaissent en live. Le ActionCable de rails 5 l utilise c'est pour ca qu'on l'a.
+gem 'redis', '~> 4.1'
 
