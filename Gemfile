@@ -94,3 +94,7 @@ gem 'twitter', '~> 6.2'
 #Pour que les commentaires apparaissent en live. Le ActionCable de rails 5 l utilise c'est pour ca qu'on l'a.
 gem 'redis', '~> 4.1'
 
+# A fast, safe and extensible Markdown to (X)HTML parser
+gem 'redcarpet', '~> 3.4'
+#Fast and easy syntax highlighting for selected languages, written in Ruby.
+gem 'coderay', '~> 1.1', '>= 1.1.2'
