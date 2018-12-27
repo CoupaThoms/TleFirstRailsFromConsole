@@ -10,15 +10,33 @@
         )  %>
 
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-5">
     FDP
     <%= image_tag "supercopaProfile.jpg", width: 300 %>
     <%= image_tag "supercopa2.jpg", width: 300 %>
-
   </div>
-  <div class="col-md-8">
+
+  <div class="col-md-7">
     <p>Bla bla c'est ma description de mon super blog whoua c'est trop cool ce training (facepalm)</p>
 
+    <div class="skills">
+      <% @skills.each do |skill| %>
+        <div class="skill">
+          <h4><%= skill.title %></h4>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-warning"
+              role="progressbar"
+              aria-valuenow="<%= skill.percent_utilized %>"
+              aria-valuemax="100"
+              style="width: <%= skill.percent_utilized %>%"
+            ></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <br/>
     <p>
       <button
         class="btn btn-primary"
