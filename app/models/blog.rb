@@ -3,7 +3,7 @@ class Blog < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  validates_presence_of :title, :body #Pour obliger de remplir ces valeurs
+  validates_presence_of :title, :body, :topic_id #Pour obliger de remplir ces valeurs
 
   belongs_to :topic
 
